@@ -1,26 +1,19 @@
 <template>
-  <div className="tweet">
-    <img
-      :src= user.image
-      className="profile"
-      alt="profile"
-    />
+  <div class="tweet">
+    <ProfileImage :image= "image" />
 
-    <div className="body">
-      <div className="top">
-        <span className="user">
-          <span className="name">{{ user.name }}</span>
-          <span className="handle">@{{ user.handle }}</span>
+    <div class="body">
+      <div class="top">
+        <span class="user">
+          <User :user= "user" />
         </span>
 
-        <span className="timestamp">{{ timestamp}}</span>
+        <Timestamp :timestamp= "timestamp" />
       </div>
 
-      <p className="message">
-        {{ message }}
-      </p>
+      <Message :message="message" />
 
-      <div className="actions">
+      <div class="actions">
         <!-- Font Awesome icons -->
         <i class="far fa-comment"></i>
         <i class="fas fa-retweet"></i>
@@ -34,6 +27,11 @@
 </template>
 
 <script>
+import ProfileImage from './ProfileImage.vue';
+import User from './User.vue';
+import Timestamp from './Timestamp.vue';
+import Message from './Message.vue';
+
 export default{
   props: {
     user: {
@@ -44,6 +42,7 @@ export default{
     timestamp: String,
     message: String,
   },
+  components: { ProfileImage, User, Timestamp, Message }
 }
  
 </script>
