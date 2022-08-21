@@ -1,7 +1,7 @@
 <template>
     <p class="message">
         {{ message }}
-      </p>
+    </p>
 </template>
 <script>
 
